@@ -36,28 +36,38 @@
     <script>
 
     function getAllListItem() {
-        
-        var list =document.getElementsByTagName("li")
-       
-        
+        var li=document.querySelectorAll("li")
         // 返回页面中所有li标签
     }
 
-    //function findAllHtmlSpanInOneSection(sectionId) {
-        //var section=docunment.getElementsByTagName("section")
-        
-        var span=/*section.*/document.getElementsByClassName("span")
-        if(span.value=="HTML")
-        {var spanhtml=span}
-        console.log(spanhtml)
+    function findAllHtmlSpanInOneSection(sectionId) {
+        var sectionspan=document.querySelectorAll(".section span")
+        var spanhtml=[]
+        for (var i=0; i< sectionspan.length; i++ ){
+            if (sectionspan[i].value == "HTML" ) {
+                spanhtml[spanhtml.length] = allElements[i];
+            }
+        }
         // 返回某个section下所有span中内容为HTML的span标签
-    //}
+    }
 
     function findListItem(sectionId, spanCont) {
+        var sectionspan=document.querySelectorAll(".section span")
+        var spancont=[]
+        for (var i=0; i< sectionspan.length; i++ ){
+            if (sectionspan[i].value == "spanCont" ) {
+                    spancont[spancont.length] = sectionspan[i];
+            }
+        }
+        var li=spancont.querySelectorAll("li")
         // 返回某个section下，所有所包含span内容为spanCont的LI标签
     }
 
     function getActiveLinkContent(sectionId) {
+        var sectionactive=String(document.querySelectorAll(".section .active"))
+
+
+
         // 返回某个section下，class为active的链接中包含的文字内容
     }
 
